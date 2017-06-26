@@ -1,0 +1,79 @@
+name: github.com/opspec-pkgs/azure.application.insights.create
+description: creates an azure application insights (if it doesn't already exist)
+inputs:
+  subscriptionId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of azure subscription
+  loginId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of user, service principal, or app to login with
+  loginSecret:
+    string:
+      constraints: { minLength: 1 }
+      description: secret of user, service principal, or app to login with
+      isSecret: true
+  name:
+    string:
+      constraints: { minLength: 1 }
+      description: name of the application insights
+  resourceGroup:
+    string:
+      constraints: { minLength: 1 }
+      description: name of azure resource group
+  location:
+    string:
+      constraints: { enum: [ eastus, northeurope, southcentralus, westeurope ] }
+      description: location of provisioned application insights
+      default: eastus
+  type:
+    string:
+      constraints: { enum: [ web, java, HockeyApp, Node.JS, other ] }
+      description: your choice of application type affects the default selection of charts you'll see
+      default: other
+  hockeyAppToken:
+    string:
+      description: if type is HokeyApp enter hockeyAppToken
+      default: ""
+  hockeyAppId:
+    string:
+      description: if type is HokeyApp enter hockeyAppId
+      default: ""
+  requestSource:
+    string:
+      constraints: { minLength: 1 }
+      description: request source
+      default: IbizaAIExtension
+  loginTenantId:
+    string:
+      constraints: { minLength: 1 }
+      description: tenant id of user, service principal, or app to login with
+      default: " "
+  loginType:
+    string:
+      constraints: { enum: [user, sp]}
+      description: type of login; 'user' (default) or 'sp' for service principal
+      default: user
+  template:
+    file:
+      default: /template.json
+run:
+  serial:
+    - container:
+        image: { ref: 'opspecpkgs/azure.application.insights.create:1.0.0' }
+        cmd: [ /cmd.sh ]
+        files: { /cmd.sh, /parametersTemplate.json, /parameters.json: parameters }
+        envVars: { name, location, type, hockeyAppToken, hockeyAppId, requestSource }
+    - op:
+        pkg: { ref: github.com/opspec-pkgs/azure.group.deployment.create#1.0.0 }
+        inputs: 
+          subscriptionId:
+          loginId:
+          loginSecret:
+          resourceGroup:
+          name:
+          parameters:
+          template:
+          loginTenantId:
+          loginType:
