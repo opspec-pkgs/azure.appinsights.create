@@ -1,20 +1,20 @@
 # problem statement
-creates an azure application insights instance (if it doesn't already exist)
+creates an azure app insights instance (if it doesn't already exist)
 
 # example usage
 
-> note: in examples, VERSION represents a version of the azure.application.insights.create pkg
+> note: in examples, VERSION represents a version of the azure.app-insights.create pkg
 
 ## install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/azure.application.insights.create#VERSION
+opctl pkg install github.com/opspec-pkgs/azure.app-insights.create#VERSION
 ```
 
 ## run
 
 ```
-opctl run github.com/opspec-pkgs/azure.application.insights.create#VERSION
+opctl run github.com/opspec-pkgs/azure.app-insights.create#VERSION
 ```
 
 ## compose
@@ -22,7 +22,7 @@ opctl run github.com/opspec-pkgs/azure.application.insights.create#VERSION
 ```yaml
 run:
   op:
-    pkg: { ref: github.com/opspec-pkgs/azure.application.insights.create#VERSION }
+    pkg: { ref: github.com/opspec-pkgs/azure.app-insights.create#VERSION }
     inputs: 
       subscriptionId:
       loginId:
