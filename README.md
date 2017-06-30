@@ -1,5 +1,5 @@
 # problem statement
-creates an azure application insights (if it doesn't already exist)
+creates an azure application insights instance (if it doesn't already exist)
 
 # example usage
 
