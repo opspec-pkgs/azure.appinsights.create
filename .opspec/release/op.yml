@@ -22,12 +22,12 @@ run:
         inputs: { pkg }
     - op:
         pkg: { ref: github.com/opspec-pkgs/docker.image.build#1.0.0 }
-        inputs: { dockerfile, imageName: 'opspecpkgs/azure.application.insights.create:$(version)' }
+        inputs: { dockerfile, imageName: 'opspecpkgs/azure.app-insights.create:$(version)' }
         outputs: { imageTar }
     - op:
         pkg: { ref: github.com/opspec-pkgs/docker.image.push#1.0.0 }
         inputs:
           imageTar:
-          imageName: 'opspecpkgs/azure.application.insights.create:$(version)'
+          imageName: 'opspecpkgs/azure.app-insights.create:$(version)'
           username: $(dockerUsername)
           password: $(dockerPassword)
