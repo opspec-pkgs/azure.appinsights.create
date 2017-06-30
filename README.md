@@ -32,8 +32,8 @@ run:
       # begin optional args
       location:
       type:
-      HockeyAppToken:
-      HockeyAppId:
+      hockeyAppToken:
+      hockeyAppId:
       requestSource:
       loginTenantId:
       loginType:
