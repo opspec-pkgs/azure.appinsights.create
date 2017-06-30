@@ -1,5 +1,5 @@
 name: github.com/opspec-pkgs/azure.application.insights.create
-description: creates an azure application insights (if it doesn't already exist)
+description: creates an azure application insights instance (if it doesn't already exist)
 inputs:
   subscriptionId:
     string:
