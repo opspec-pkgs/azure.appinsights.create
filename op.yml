@@ -1,5 +1,5 @@
-name: github.com/opspec-pkgs/azure.application.insights.create
-description: creates an azure application insights instance (if it doesn't already exist)
+name: github.com/opspec-pkgs/azure.app-insights.create
+description: creates an azure app insights instance (if it doesn't already exist)
 inputs:
   subscriptionId:
     string:
@@ -17,7 +17,7 @@ inputs:
   name:
     string:
       constraints: { minLength: 1 }
-      description: name of the application insights
+      description: name of the app insights instance
   resourceGroup:
     string:
       constraints: { minLength: 1 }
@@ -25,7 +25,7 @@ inputs:
   location:
     string:
       constraints: { enum: [ eastus, northeurope, southcentralus, westeurope ] }
-      description: location of provisioned application insights
+      description: location of the app insights instance
       default: eastus
   type:
     string:
@@ -61,7 +61,7 @@ inputs:
 run:
   serial:
     - container:
-        image: { ref: 'opspecpkgs/azure.application.insights.create:1.0.0' }
+        image: { ref: 'opspecpkgs/azure.app-insights.create:1.0.0' }
         cmd: [ /cmd.sh ]
         files: { /cmd.sh, /parametersTemplate.json, /parameters.json: parameters }
         envVars: { name, location, type, hockeyAppToken, hockeyAppId, requestSource }
