@@ -20,24 +20,23 @@ opctl run github.com/opspec-pkgs/azure.app-insights.create#VERSION
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/azure.app-insights.create#VERSION }
-    inputs: 
-      subscriptionId:
-      loginId:
-      loginSecret:
-      name:
-      resourceGroup:
-      # begin optional args
-      location:
-      type:
-      hockeyAppToken:
-      hockeyAppId:
-      requestSource:
-      loginTenantId:
-      loginType:
-      # end optional args
+op:
+  pkg: { ref: github.com/opspec-pkgs/azure.app-insights.create#VERSION }
+  inputs: 
+    subscriptionId:
+    loginId:
+    loginSecret:
+    name:
+    resourceGroup:
+    # begin optional args
+    location:
+    type:
+    hockeyAppToken:
+    hockeyAppId:
+    requestSource:
+    loginTenantId:
+    loginType:
+    # end optional args
 ```
 
 # Support
