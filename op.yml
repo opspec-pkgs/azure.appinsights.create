@@ -1,4 +1,4 @@
-name: github.com/opspec-pkgs/azure.app-insights.create
+name: github.com/opspec-pkgs/azure.appinsights.create
 description: creates an azure app insights instance (if it doesn't already exist)
 inputs:
   subscriptionId:
@@ -58,10 +58,11 @@ inputs:
   template:
     file:
       default: /template.json
+version: 1.0.0
 run:
   serial:
     - container:
-        image: { ref: 'opspecpkgs/azure.app-insights.create:1.0.0' }
+        image: { ref: 'opspecpkgs/azure.appinsights.create:1.0.0' }
         cmd: [ /cmd.sh ]
         files: { /cmd.sh, /parametersTemplate.json, /parameters.json: parameters }
         envVars: { name, location, type, hockeyAppToken, hockeyAppId, requestSource }
