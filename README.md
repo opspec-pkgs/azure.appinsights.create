@@ -1,27 +1,29 @@
+[![Build Status](https://travis-ci.org/opspec-pkgs/azure.app-insights.create.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.app-insights.create)
+
 # Problem statement
 creates an azure app insights instance (if it doesn't already exist)
 
 # Example usage
 
-> note: in examples, VERSION represents a version of the azure.app-insights.create pkg
+> note: in examples, VERSION represents a version of the azure.appinsights.create pkg
 
 ## install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/azure.app-insights.create#VERSION
+opctl pkg install github.com/opspec-pkgs/azure.appinsights.create#VERSION
 ```
 
 ## run
 
 ```
-opctl run github.com/opspec-pkgs/azure.app-insights.create#VERSION
+opctl run github.com/opspec-pkgs/azure.appinsights.create#VERSION
 ```
 
 ## compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/azure.app-insights.create#VERSION }
+  pkg: { ref: github.com/opspec-pkgs/azure.appinsights.create#VERSION }
   inputs: 
     subscriptionId:
     loginId:
@@ -42,7 +44,7 @@ op:
 # Support
 
 join us on [![Slack](https://opspec-slackin.herokuapp.com/badge.svg)](https://opspec-slackin.herokuapp.com/)
-or [open an issue](https://github.com/opspec-pkgs/azure.app-insights.create/issues)
+or [open an issue](https://github.com/opspec-pkgs/azure.appinsights.create/issues)
 
 # Releases
 
