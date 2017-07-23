@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/opspec-pkgs/azure.app-insights.create.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.app-insights.create)
+[![Build Status](https://travis-ci.org/opspec-pkgs/azure.appinsights.create.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.appinsights.create)
 
 # Problem statement
 creates an azure app insights instance (if it doesn't already exist)
