@@ -5,5 +5,11 @@ All notable changes will be documented in this file in accordance with
 
 ## \[Unreleased]
 
+## \[2.0.0] - 2018-03-03
+
+### Removed
+
+- template parameter; leaked implementation detail
+
 ## \[1.0.0] - 2017-07-01
 
