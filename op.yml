@@ -55,11 +55,11 @@ inputs:
       constraints: { enum: [user, sp]}
       description: type of login; 'user' (default) or 'sp' for service principal
       default: user
-version: 2.1.0
+version: 3.0.0
 run:
   serial:
     - container:
-        image: { ref: 'opspecpkgs/azure.appinsights.create:2.1.0' }
+        image: { ref: 'ghcr.io/opspec-pkgs/azure.appinsights.create:3.0.0' }
         cmd: [ /cmd.sh ]
         files:
           /cmd.sh:
@@ -73,7 +73,7 @@ run:
           hockeyAppId:
           requestSource:
     - op:
-        pkg: { ref: github.com/opspec-pkgs/azure.group.deployment.create#1.1.0 }
+        ref: github.com/opspec-pkgs/azure.group.deployment.create#1.1.0
         inputs: 
           subscriptionId:
           loginId:
@@ -81,6 +81,6 @@ run:
           resourceGroup:
           name:
           parameters:
-          template: $(/template.json)
+          template: $(./template.json)
           loginTenantId:
           loginType:
